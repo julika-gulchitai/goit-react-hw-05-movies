@@ -45,7 +45,6 @@ const StyledWrapper = styled.div`
 
 const StyledHeader = styled.header`
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   padding: 10px 20px;
   font-size: 1rem;
@@ -74,7 +73,8 @@ export const StyledIconLink = styled(NavLink)`
   margin-right: 15px;
   color: #7e918a;
 `;
-const StyledMainContent = styled.div`
+
+export const StyledMainContent = styled.div`
   flex-grow: 1;
   padding: 10px;
 `;
