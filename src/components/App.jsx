@@ -11,16 +11,7 @@ import { MovieDetails } from 'pages/MovieDetails';
 
 export const App = () => {
   return (
-    <div
-    // style={{
-    //   height: '100vh',
-    //   display: 'flex',
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-    //   fontSize: 20,
-    //   color: '#010101',
-    // }}
-    >
+    <div>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
