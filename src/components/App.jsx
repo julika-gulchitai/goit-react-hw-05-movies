@@ -1,8 +1,8 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Cast from './Cast';
-import Gallery from '../components/Gallery/Gallery';
+
 import { Reviews } from './Reviews';
 import Home from 'pages/Home';
 import Movie from './Movie';
