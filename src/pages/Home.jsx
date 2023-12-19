@@ -11,19 +11,17 @@ const Home = () => {
 
   return (
     <>
-      <div>
-        <h2>The most popular movies that may interest you</h2>
-        <hr />
-        <ul>
-          {movies.map(movie => (
-            <li key={movie.id}>
-              <Link to={`movies/${movie.id.toString()}`}>
-                {movie.original_title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <h2>The most popular movies that may interest you</h2>
+      <hr />
+      <ul>
+        {movies.map(movie => (
+          <li key={movie.id}>
+            <Link to={`movies/${movie.id.toString()}`}>
+              {movie.original_title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </>
   );
 };

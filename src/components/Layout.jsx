@@ -27,6 +27,7 @@ const Layout = () => {
 };
 
 export default Layout;
+
 const StyledWrapper = styled.div`
   display: flex;
   min-height: 100vh;

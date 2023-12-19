@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Cast from '../components/Cast/Cast';
+import Cast from './Cast';
 import Gallery from '../components/Gallery/Gallery';
-import { Reviews } from './Reviews/Reviews';
+import { Reviews } from './Reviews';
 import Home from 'pages/Home';
-import Movie from './Movie/Movie';
+import Movie from './Movie';
 import Layout from './Layout';
 import { MovieDetails } from 'pages/MovieDetails';
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { fetchMovie } from 'services/api';
+import { fetchMovieBySearch } from 'services/api';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    fetchMovie().then(res => setMovies(res));
+    fetchMovieBySearch().then(res => setMovies(res));
   }, []);
   return (
     <div>
