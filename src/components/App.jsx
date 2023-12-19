@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import styled from 'styled-components';
 import Cast from './Cast';
 
 import { Reviews } from './Reviews';
@@ -16,7 +15,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="movies" element={<Movie />} />
-          <Route path="movies/:movieID" element={<MovieDetails />}>
+          <Route path="movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
@@ -26,10 +25,3 @@ export const App = () => {
     </div>
   );
 };
-
-export const StyledLink = styled.div`
-  display: grid;
-  place-content: center;
-  color: green;
-  width: 100%;
-`;

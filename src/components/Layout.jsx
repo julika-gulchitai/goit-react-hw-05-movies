@@ -1,16 +1,12 @@
 import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { AiFillBackward } from 'react-icons/ai';
 import { RiHomeSmileLine } from 'react-icons/ri';
 
 const Layout = () => {
   return (
     <StyledWrapper>
       <StyledHeader>
-        <StyledIconLink to="/">
-          <AiFillBackward />
-        </StyledIconLink>
         <nav>
           <StyledNavLink to="/">
             <RiHomeSmileLine size="2rem" />
@@ -47,7 +43,7 @@ const StyledWrapper = styled.div`
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 20px 0;
   font-size: 1rem;
 
   nav {
