@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+export const TMBD = 'https://image.tmdb.org/t/p/w500';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 const KEY = 'fd8ed35fd5e62e5eb969497540b2a96f';
 
@@ -31,16 +31,18 @@ export const fetchMovieBySearch = async query => {
       query: query,
     },
   });
+  console.log('fetchSearch', data);
   return data;
 };
 
 export const fetchCast = async id => {
-  const { data } = await axios.get(`/movie/${id}/credits`, {
+  const { data } = await axios.get(`movie/${id}/credits`, {
     params: {
       api_key: KEY,
     },
   });
-  return data.results;
+  console.log('fetchCast', data.cast);
+  return data.cast;
 };
 export const fetchReview = async id => {
   const { data } = await axios.get(`movie/${id}/reviews`, {
@@ -48,5 +50,6 @@ export const fetchReview = async id => {
       api_key: KEY,
     },
   });
-  return data?.results;
+  console.log('fetchRew', data.results);
+  return data.results;
 };

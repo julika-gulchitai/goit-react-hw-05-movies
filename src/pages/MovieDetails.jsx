@@ -18,9 +18,6 @@ export const MovieDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const goBack = useRef(location.state?.from ?? '/');
-  const tmbd = 'https://image.tmdb.org/t/p/w500';
-  // src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-  // src={`https://image.tmdb.org/t/p/w500/${person.profile_path}`}
 
   useEffect(() => {
     fetchMovieById(movieId).then(res => setMovie(res));
@@ -39,12 +36,20 @@ export const MovieDetails = () => {
           </StyledIconLink>
         </ButttonBack>
         <WrapperCard>
-          {movie !== undefined && (
+          {movie && (
             <WrapperPost>
               <div>
                 {
                   <img
-                    src={movie.poster_path ? `${tmbd + movie.poster_path}` : ''}
+                    style={{
+                      boxShadow: '2px 2px #ccff00, -1em 0 .4em #d5e691',
+                      marginLeft: '20px',
+                    }}
+                    src={
+                      movie.poster_path
+                        ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                        : ''
+                    }
                     alt={movie.media_type}
                   />
                 }
@@ -53,16 +58,17 @@ export const MovieDetails = () => {
                 <StyledTitle>{movie.title}</StyledTitle>
                 <p>{movie.overview}</p>
                 <p style={{ marginTop: 'auto' }}>
-                  Release_date:{movie.release_date}
+                  <strong>Release_date: </strong>
+                  {movie.release_date}
                 </p>
               </WrapperText>
             </WrapperPost>
           )}
         </WrapperCard>
-        <WrapperCard>
+        <WrapperCast>
           <Link to="cast">Cast</Link>
           <Link to="reviews">Reviews</Link>
-        </WrapperCard>
+        </WrapperCast>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense>
@@ -89,7 +95,6 @@ const WrapperCard = styled.div`
   flex-direction: row;
   padding: 10px;
   img {
-    /* width: 40%; */
     margin-right: 10px;
 
     width: 300px;
@@ -110,4 +115,15 @@ const WrapperText = styled.div`
   color: #434d49;
   display: flex;
   flex-direction: column;
+  margin-left: 15px;
+`;
+const WrapperCast = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+  margin-left: 40px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
 `;

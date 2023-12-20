@@ -15,7 +15,9 @@ code {
     monospace;
 }
 
-a {
+a,
+ul,
+li {
   text-decoration: none;
   list-style-type: none;
   color: #434d49;

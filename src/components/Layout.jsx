@@ -26,6 +26,8 @@ export default Layout;
 
 const StyledWrapper = styled.div`
   display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
   min-height: 100vh;
   background: radial-gradient(
     ellipse farthest-corner at 95% 95%,
