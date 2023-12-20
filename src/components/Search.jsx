@@ -1,24 +1,35 @@
-// import React, { useEffect, useState } from 'react';
-// import { fetchMovieBySearch } from 'services/api';
-// import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import React, { useState } from 'react';
 
-// const Search = () => {
-//   const [query, setQuery] = useState([]);
-//   const location = useLocation;
-//   const [searchParams, setSearchParams] = useSearchParams();
+const Search = ({ setQuery }) => {
+  const [search, setSearch] = useState([]);
 
-//   const hendleSubmit = e => {
-//     e.preventDefault;
-//     setSearchParams({ query: e.elements.search.value });
-//   };
-//   setQuery(query);
-//   return (
-//     <form>
-//       <input type="text" placeholder="Find the movie" />
-//       <button onClick={hendleSubmit} type="submit">
-//         Search
-//       </button>
-//     </form>
-//   );
-// };
-// export default Search;
+  const hendleSubmit = e => {
+    e.preventDefault();
+    setQuery(search);
+  };
+  return (
+    <form onSubmit={hendleSubmit}>
+      <input
+        style={{ bpadding: '5px', borderRadius: '4px' }}
+        required
+        type="text"
+        placeholder="Find the movie"
+        name="search"
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+      />
+      <button
+        type="submit"
+        style={{
+          background: '#dcf08d',
+          borderRadius: '4px',
+          border: '0',
+          boxShadow: 'inset 0 0 5px #000000',
+        }}
+      >
+        Search
+      </button>
+    </form>
+  );
+};
+export default Search;

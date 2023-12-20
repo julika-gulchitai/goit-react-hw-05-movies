@@ -12,7 +12,7 @@ import {
 import { fetchMovieById } from 'services/api';
 import styled from 'styled-components';
 
-export const MovieDetails = () => {
+ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ export const MovieDetails = () => {
     </>
   );
 };
-
+export default MovieDetails;
 const ButttonBack = styled.button`
   padding-top: 0;
   background-color: transparent;

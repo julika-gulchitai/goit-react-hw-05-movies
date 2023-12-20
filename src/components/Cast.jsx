@@ -13,19 +13,21 @@ const Cast = () => {
 
   return (
     <div>
-      <StyledActors>
-        {actors.map(actor => (
-          <ActorCard key={actor.id}>
-            <img
-              width="130"
-              src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}
-              alt={actors.name}
-            />
-            <p>{actor.name}</p>
-            <p>{actor.character}</p>
-          </ActorCard>
-        ))}
-      </StyledActors>
+      {actors && (
+        <StyledActors>
+          {actors.map(actor => (
+            <ActorCard key={actor.id}>
+              <img
+                width="130"
+                src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}
+                alt={actors.name}
+              />
+              <p>{actor.name}</p>
+              <p>{actor.character}</p>
+            </ActorCard>
+          ))}
+        </StyledActors>
+      )}
     </div>
   );
 };

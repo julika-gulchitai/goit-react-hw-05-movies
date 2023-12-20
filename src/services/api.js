@@ -9,7 +9,6 @@ export const fetchMovie = async () => {
       api_key: KEY,
     },
   });
-  console.log('fetchMovie', data.results);
   return data.results;
 };
 
@@ -19,8 +18,6 @@ export const fetchMovieById = async id => {
       api_key: KEY,
     },
   });
-  console.log('fetchMovieById', data);
-
   return data;
 };
 
@@ -31,8 +28,7 @@ export const fetchMovieBySearch = async query => {
       query: query,
     },
   });
-  console.log('fetchSearch', data);
-  return data;
+  return data.results;
 };
 
 export const fetchCast = async id => {
@@ -41,15 +37,14 @@ export const fetchCast = async id => {
       api_key: KEY,
     },
   });
-  console.log('fetchCast', data.cast);
   return data.cast;
 };
+
 export const fetchReview = async id => {
   const { data } = await axios.get(`movie/${id}/reviews`, {
     params: {
       api_key: KEY,
     },
   });
-  console.log('fetchRew', data.results);
   return data.results;
 };

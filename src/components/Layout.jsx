@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
+import { Suspense } from 'react';
 import styled from 'styled-components';
 import { RiHomeSmileLine } from 'react-icons/ri';
 
@@ -15,7 +16,9 @@ const Layout = () => {
         </nav>
       </StyledHeader>
       <StyledMainContent>
-        <Outlet />
+        <Suspense fallback={<div style={{ fontSize: '20px' }}>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </StyledMainContent>
       <StyledFooter>&copy; All right reserved 2023</StyledFooter>
     </StyledWrapper>
@@ -27,6 +30,7 @@ export default Layout;
 const StyledWrapper = styled.div`
   display: flex;
   max-width: 1280px;
+  padding: 15px;
   margin: 0 auto;
   min-height: 100vh;
   background: radial-gradient(
@@ -79,6 +83,6 @@ export const StyledMainContent = styled.div`
 `;
 export const StyledFooter = styled.footer`
   font-size: 15px;
-  text-align: center;
+  text-align: end;
   padding-bottom: 5px;
 `;

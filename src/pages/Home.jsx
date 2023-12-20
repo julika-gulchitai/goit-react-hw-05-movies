@@ -28,7 +28,7 @@ const Home = () => {
 };
 export default Home;
 
-const Styledli = styled.li`
+export const Styledli = styled.li`
   display: flex;
   font-size: 20px;
   gap: 10px;
