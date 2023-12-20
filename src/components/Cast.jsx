@@ -13,7 +13,7 @@ const Cast = () => {
 
   return (
     <div>
-      {actors && (
+      {actors.length > 0 ? (
         <StyledActors>
           {actors.map(actor => (
             <ActorCard key={actor.id}>
@@ -27,7 +27,7 @@ const Cast = () => {
             </ActorCard>
           ))}
         </StyledActors>
-      )}
+      ) : null}
     </div>
   );
 };

@@ -11,16 +11,19 @@ const Reviews = () => {
 
   return (
     <>
-      {' '}
-      {reviews && (
+      {reviews.length > 0 ? (
         <ul>
           {reviews.map(item => (
             <li key={item.id}>
-              <h4>Author: {item.author}</h4>
-              <p style={{ color: '#434d49' }}>{item.content}</p>
+              <h3 style={{ marginBottom: '0' }}>Author: {item.author}</h3>
+              <p style={{ color: '#434d49', marginTop: '10px' }}>
+                {item.content}
+              </p>
             </li>
           ))}
         </ul>
+      ) : (
+        <p>There are no reviews yet</p>
       )}
     </>
   );

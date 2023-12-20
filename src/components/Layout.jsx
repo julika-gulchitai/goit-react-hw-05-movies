@@ -13,6 +13,7 @@ const Layout = () => {
             <RiHomeSmileLine size="2rem" />
           </StyledNavLink>
           <StyledNavLink to="/movies">Movies</StyledNavLink>
+          <StyledNavLink to="/*"></StyledNavLink>
         </nav>
       </StyledHeader>
       <StyledMainContent>
